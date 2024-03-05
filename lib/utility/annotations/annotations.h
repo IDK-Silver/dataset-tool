@@ -14,20 +14,16 @@
 #include <fstream>
 #include <iostream>
 
-namespace utility {
-    namespace annotations {
-        /**
-         *  To offset the class in Darknet-format annotation files.
-         * @param in_file source path
-         * @param offset class offset
-         * @param out_file output file path
-         */
-        void dark_net_offset(const std::string &in_file, int offset, const std::string &out_file);
-    };
+
+namespace utility::annotations {
+    /**
+     *  To offset the class in Darknet-format annotation files.
+     * @param input_path source path
+     * @param offset class offset
+     * @param out_file output file path
+     */
+    void dark_net_offset(const std::string &input_path, int offset, const std::string &output_path);
 }
-
-
-
 
 
 #endif //DATASET_TOOL_ANNOTATIONS_H
