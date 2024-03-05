@@ -36,12 +36,19 @@ void OffsetCommand::run() {
     const auto result = std::filesystem::path(this->get<std::string>("out"));
     const auto offset = this->get<int>("offset");
 
+    // create result directory if not exists
+    if (not exists(result))
+    {
+        std::filesystem::create_directory(
+                std::filesystem::path(result)
+        );
+    }
+
     for (const auto& file_name : files)
     {
         auto file = std::filesystem::path(file_name);
         auto target = result / file.filename();
         utility::annotations::dark_net_offset(absolute(file), offset, absolute(target));
-        std::cout  << "change "<< absolute(file) << " to " << absolute(target) << "by offset " << offset << '\n';
     }
 
 }
