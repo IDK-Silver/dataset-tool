@@ -74,5 +74,5 @@
   可以用 --out 指定輸出資料夾
 
   ```shell
-  ./dataset_tool offset dataset_annotation 10 --out offset_annotation
+  ./dataset_tool offset ./dataset_annotation 10 --out ./offset_annotation
   ```
