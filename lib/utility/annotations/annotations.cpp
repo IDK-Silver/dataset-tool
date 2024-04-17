@@ -45,7 +45,7 @@ void utility::annotations::dark_net_offset(const std::string& input_path, int of
     std::fstream ofs;
 
     // the lambda function to check if the file stream is opened successfully
-    auto check_file_stream = [] (const std::fstream & stream, const std::filesystem::path file) {
+    auto check_file_stream = [] (const std::fstream & stream, const std::filesystem::path & file) {
         if (not stream.is_open())
         {
             std::cerr << "can't open file " << absolute(std::filesystem::path(file)) << std::endl;
